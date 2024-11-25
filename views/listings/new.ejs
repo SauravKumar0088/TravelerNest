@@ -1,0 +1,63 @@
+<% layout('./layouts/boilerplate') %>
+<body>
+  <div class="offset-3" style="margin-top: 2rem ; margin-bottom: 2rem;">
+  <h3>Create a new listings</h3>
+  <form action="/listings" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label><br>
+      <input
+        type="text"
+        name="listing[title]"
+        placeholder="Enter title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label><br>
+      <textarea
+        id="description"
+        name="listing[description]"
+        placeholder="Enter description"
+        rows="6"
+        cols="60"
+        required
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label><br>
+      <input name="listing[image]" id="image" placeholder="Enter image URL " />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price:</label><br>
+      <input
+        type="number"
+        id="price"
+        placeholder="Enter price"
+        name="listing[price]"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location:</label><br>
+      <input
+        type="text"
+        name="listing[location]"
+        placeholder="Enter location"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="country" class="form-label">Country:</label><br>
+      <input
+        id="country"
+        name="listing[country]"
+        placeholder="Enter your country"
+        required
+      />
+      <br />
+    </div>
+
+    <input type="submit" value="Add New Listings" class="Button-Add" >
+  </form>
+  </div>
+</body>

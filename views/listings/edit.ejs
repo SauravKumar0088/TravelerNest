@@ -1,0 +1,33 @@
+<% layout('./layouts/boilerplate') %>
+<body>
+    <div class="offset-3 edit-box" style="margin-top: 2rem ; margin-bottom: 3rem;">
+        <h3>Edit your Listing</h3>
+    <form action="/listings/<%= item._id %>?_method=PUT" method="POST"> 
+<div>
+        <label for="name" class="form-label">Name:</label><br>
+        <input class="input-edit" type="text" name="listing[title]" value="<%= item.title%>" required>
+        <div>
+        <label for="description" class="form-label">Description:</label><br>
+        <textarea id="description" class="input-edit" name="listing[description]" value="<%= item.description %>" rows="4" cols="50" required><%= item.description %></textarea>
+        </div>
+        <div>       
+        <label for="image" class="form-label">Image:</label><br>
+        <input name="listing[image]" class="input-edit" id="image" value="<%= item.image %>">
+        </div>
+        <div>  
+        <label for="price" class="form-label">Price:</label><br>
+        <input type="number" class="input-edit" id="price" value="<%= item.price %>" name="listing[price]" required>  
+        </div>
+        <div>    
+        <label for="location" class="form-label">Location:</label><br>
+        <input type="text" class="input-edit" name="listing[location]" value="<%= item.location %>" required>
+        </div>
+        <div> 
+        <label for="country" class="form-label">Country:</label><br>
+        <input id="country" class="input-edit" name="listing[country]" value="<%= item.country %>" required>
+        </div>
+    
+        <input type="submit" class="button-edit" value="Edit Now">
+    </form>
+    </div>
+</body>
